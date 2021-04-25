@@ -8,7 +8,7 @@
 
 #if os(iOS) || os(tvOS) || os(watchOS)
 import SwiftUI
-import SwiftUIKit
+
 
 struct CircularProgressViewScreen: View {
     

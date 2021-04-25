@@ -8,7 +8,7 @@
 
 #if os(iOS)
 import SwiftUI
-import SwiftUIKit
+
 import VisionKit
 
 struct DocumentCameraScreen: View {

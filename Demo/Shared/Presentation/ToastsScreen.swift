@@ -7,11 +7,11 @@
 //
 
 import SwiftUI
-import SwiftUIKit
+
 
 struct ToastsScreen: View {
     
-    @StateObject private var context = ToastContext()
+    @StateObject private var context = SFToastObservable()
     
     var body: some View {
         MenuList("Toasts") {
@@ -22,10 +22,13 @@ struct ToastsScreen: View {
             Section(header: Text("Actions")) {
                 ForEach(DemoPresentable.allCases) { item in
                     MenuListItem(icon: item.listIcon, title: item.listText(for: "toast"))
-                        .button(action: { present(item) })
+                        .button(action: {
+                                    present(item)
+                            
+                        })
                 }
             }
-        }.toast(context: context, duration: 5, style: .standard)
+        }.toast(context: context, duration: 5)
     }
 }
 
